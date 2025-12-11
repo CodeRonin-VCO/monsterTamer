@@ -1,9 +1,12 @@
 import { BATTLE_ASSET_KEYS, BATTLE_BACKGROUND_ASSET_KEYS, HEALTH_BAR_ASSET_KEYS, MONSTER_ASSET_KEYS } from "../assets/assets-keys.js";
+import { BattleMenu } from "../battle/ui/menu/battle-menu.js";
 import Phaser from "../lib/phaser.js";
 import { SCENE_KEYS } from "./scene-keys.js";
 
 
 export class BattleScene extends Phaser.Scene {
+    #battleMenu;
+    
     constructor() {
         super({
             key: SCENE_KEYS.BATTLE_SCENE,
@@ -44,6 +47,9 @@ export class BattleScene extends Phaser.Scene {
             this.add.text(enemyMonsterName.width + 35, 23, `L5`, { color: "#ED474B", fontSize: '28px' }),
             this.add.text(30, 55, `HP`, { color: "#FF6505", fontSize: '24px', fontStyle: 'italic' }),
         ]);
+
+        // Render out the main info and sub info panel
+        this.#battleMenu = new BattleMenu(this)
     }
     // Le # permet de créer une méthode privée
     #createHealthBar(x, y) {

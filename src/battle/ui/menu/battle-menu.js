@@ -14,6 +14,9 @@ export class BattleMenu {
 
     constructor(scene) {
         this.#scene = scene;
+        this.#createMainInfoPanel();
+        this.#createMainBattleMenu();
+        this.#createMonsterAttackSubMenu();
     }
 
     #createMainBattleMenu() {
@@ -40,7 +43,7 @@ export class BattleMenu {
     #createMainInfoPanel() {
         const rectangleHeight = 124;
         const padding = 4;
-        this.add
+        this.#scene.add
             .rectangle(
                 padding, // position x (on tient compte du padding)
                 this.#scene.scale.height - rectangleHeight - padding, // position Y

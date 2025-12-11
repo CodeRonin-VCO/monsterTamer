@@ -5,8 +5,9 @@ import { SCENE_KEYS } from "./scene-keys.js";
 
 
 export class BattleScene extends Phaser.Scene {
+    /** @type {BattleMenu} */
     #battleMenu;
-    
+
     constructor() {
         super({
             key: SCENE_KEYS.BATTLE_SCENE,
@@ -50,6 +51,7 @@ export class BattleScene extends Phaser.Scene {
 
         // Render out the main info and sub info panel
         this.#battleMenu = new BattleMenu(this)
+        this.#battleMenu.showMainBattleMenu();
     }
     // Le # permet de créer une méthode privée
     #createHealthBar(x, y) {

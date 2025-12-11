@@ -1,0 +1,19 @@
+{
+  "name": "yurei-no-ken",
+  "version": "1.0.0",
+  "description": "Small game to discover phaser",
+  "keywords": [
+    "TS",
+    "Phaser"
+  ],
+  "license": "ISC",
+  "author": "CodeRonin",
+  "type": "module",
+  "main": "/src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "phaser": "^3.90.0"
+  }
+}

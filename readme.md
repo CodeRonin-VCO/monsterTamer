@@ -1,8 +1,9 @@
-# Yurei No Ken (L’Épée des Esprits)
-L'Epée des esprits est un petit jeu au tour par tour, mélangeant des combats et des énigmes.
+# Monster Tamer
+Apprentissage de phaser avec le tutoriel : https://www.youtube.com/playlist?list=PLmcXe0-sfoSgq-pyXrFx0GZjHbvoVUW8t
 
-## Intro
-Dans un Japon féodal et fantastique, une femme s'enfuit de son mariage. Au milieu d'une forêt, elle rencontrera un Kami mourrant qui lui confiera ses dernières volontés. Et son aventure démarre...
+Ressources: https://github.com/scottwestover
+
+Code avec les assets : https://github.com/devshareacademy/monster-tamer
 
 ## Setup
 
@@ -10,14 +11,22 @@ Dans un Japon féodal et fantastique, une femme s'enfuit de son mariage. Au mili
 
 ```
 index.html
-assets/                 → images
+assets/                             → images
 src/
-    main.js             → centralisation des scènes
-    scenes/
-        bootScene.js    → Première scene
-        preloadScene.js → chargement de tous les assets du jeu
-        titleScene.js
-        gameScene.js    → scène du jeu
+    /assets
+        assets-keys.js              → freeze object name
+    /battle
+        /ui
+            /menu
+                battle-menu.js
+    /common
+        direction.js                → freeze object direction keyboards
+    /lib                            → Export phaser
+    /scene
+        battle-scene.js
+        preload-scene.js
+        scene-keys.js
+    main.js                         → Main scenes manager (canvas)
 ```
 
 ### Install

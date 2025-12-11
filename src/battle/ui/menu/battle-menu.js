@@ -40,7 +40,7 @@ export class BattleMenu {
         this.#battleTextGameObjectLine1.setAlpha(1);
         this.#battleTextGameObjectLine2.setAlpha(1);
     }
-    
+
     hideMainBattleMenu() {
         this.#mainBattleMenuPhaserContainerGameObject.setAlpha(0);
         this.#battleTextGameObjectLine1.setAlpha(0);
@@ -50,13 +50,32 @@ export class BattleMenu {
     showMonsterAttackSubMenu() {
         this.#moveSelectionSubBattleMenuPhaserContainerGameObject.setAlpha(1);
     }
-    
+
     hideMonsterAttackSubMenu() {
         this.#moveSelectionSubBattleMenuPhaserContainerGameObject.setAlpha(0);
     }
 
+    /**
+     * 
+     * @param {"OK" | "Cancel"} input 
+     */
+    handlePlayerInput(input) {
+        console.log(input);
+        if (input === "CANCEL") {
+            this.hideMonsterAttackSubMenu();
+            this.showMainBattleMenu();
+            return;
+        }
+
+        if (input === "OK") {
+            this.hideMainBattleMenu();
+            this.showMonsterAttackSubMenu();
+        }
+    }
+
     #createMainBattleMenu() {
         this.#battleTextGameObjectLine1 = this.#scene.add.text(20, 460, `What should`, batlleUiTextStyle);
+
         // Todo: update to use monster data that is passed into this class instance
         this.#battleTextGameObjectLine2 = this.#scene.add.text(20, 512, `${MONSTER_ASSET_KEYS.IGUANIGNITE} do next?`, batlleUiTextStyle);
         this.#mainBattleMenuPhaserContainerGameObject = this.#scene.add.container(520, 448, [

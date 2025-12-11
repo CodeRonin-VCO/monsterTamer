@@ -20,14 +20,3 @@ const game = new Phaser.Game({
         BattleScene,
     ]
 })
-
-
-
-
-// Ajouter une scène
-// game.scene.add(SCENE_KEYS.PRELOAD_SCENE, PreloadScene);
-
-// Démarrer la scène
-// game.scene.start(SCENE_KEYS.PRELOAD_SCENE)
-
-

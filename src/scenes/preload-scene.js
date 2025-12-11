@@ -12,12 +12,6 @@ export class PreloadScene extends Phaser.Scene {
         console.log(SCENE_KEYS.PRELOAD_SCENE);
     }
 
-    // init() {
-    //     // ==== Code de démarrage de la scène (ex: réinitiliser le score au démarrage de la scène)
-    //     console.log('init');
-    // }
-
-
     preload() {
         // ==== Méthode de préchargement (charger les ressources et les mettre dans la file d'attente dans l'ordre et phaser attend que toutes les ressources soient chargées)
         // console.log('preload');
@@ -44,22 +38,9 @@ export class PreloadScene extends Phaser.Scene {
 
 
     create() {
-        // // ==== Créer des objets et les placer dans notre scène (exemple: bg)
-        // console.log('create');
-        // console.log(this.textures.get(BATTLE_BACKGROUND_ASSET_KEYS.FOREST));
-
-        // // ==== Créer un nouvel objet en fonction de la méthode qu'on appelle → méthode image, positionnée aux coordonnées x et y (0,0) donc top left (en pixel). On peut rajouter d'autres méthode dessus avec setOrigin
-        // this.add.image(0, 0, BATTLE_BACKGROUND_ASSET_KEYS.FOREST).setOrigin(0)
-
         // ==== Indiquer qu'on veut passer à la scene suivante (start)
         console.log(`[${PreloadScene.name}:create] invoked`);
         
         this.scene.start(SCENE_KEYS.BATTLE_SCENE);
     }
-
-
-    // update() {
-    //     // ==== Permet de mettre à jour les éléments dans la scène (ex: entrées du joueur)
-    //     console.log('update');
-    // }
 }

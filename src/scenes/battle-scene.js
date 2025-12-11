@@ -2,6 +2,7 @@ import { BATTLE_ASSET_KEYS, BATTLE_BACKGROUND_ASSET_KEYS, HEALTH_BAR_ASSET_KEYS,
 import Phaser from "../lib/phaser.js";
 import { SCENE_KEYS } from "./scene-keys.js";
 
+
 export class BattleScene extends Phaser.Scene {
     constructor() {
         super({
@@ -28,7 +29,7 @@ export class BattleScene extends Phaser.Scene {
         this.add.container(556, 318, [
             this.add.image(0, 0, BATTLE_ASSET_KEYS.HEALTH_BAR_BACKGROUND).setOrigin(0),
             playerMonsterName,
-            this.#createHealth(34, 34), // appel de la méthode privée
+            this.#createHealthBar(34, 34), // appel de la méthode privée
             this.add.text(playerMonsterName.width + 35, 23, `L5`, { color: "#ED474B", fontSize: '28px' }),
             this.add.text(30, 55, `HP`, { color: "#FF6505", fontSize: '24px', fontStyle: 'italic' }),
             this.add.text(443, 80, `25/25`, { color: "#7E3D3F", fontSize: '16px' }).setOrigin(1, 0),
@@ -39,13 +40,13 @@ export class BattleScene extends Phaser.Scene {
         this.add.container(0, 0, [
             this.add.image(0, 0, BATTLE_ASSET_KEYS.HEALTH_BAR_BACKGROUND).setOrigin(0).setScale(1, 0.8),
             enemyMonsterName,
-            this.#createHealth(34, 34), // appel de la méthode privée
+            this.#createHealthBar(34, 34), // appel de la méthode privée
             this.add.text(enemyMonsterName.width + 35, 23, `L5`, { color: "#ED474B", fontSize: '28px' }),
             this.add.text(30, 55, `HP`, { color: "#FF6505", fontSize: '24px', fontStyle: 'italic' }),
         ]);
     }
     // Le # permet de créer une méthode privée
-    #createHealth(x, y) {
+    #createHealthBar(x, y) {
         const scaleY = 0.7;
 
         const leftCap = this.add
@@ -64,5 +65,7 @@ export class BattleScene extends Phaser.Scene {
 
         return this.add.container(x, y, [leftCap, middle, rightCap])
     }
+
+
 
 }
